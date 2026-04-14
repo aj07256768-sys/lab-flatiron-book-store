@@ -1,3 +1,5 @@
+const { createElement } = require("react")
+
 const bookStore = {
     name: 'Flatbooks Technical Books',
     books: [
@@ -44,4 +46,45 @@ const bookStore = {
 }
 
 // Write your code here!
+ 
+ const bookStoreTitle=document.getElementById('#header')
 
+ bookStoreTitle.textContent=bookStore.name
+      
+
+ // creating and assinging a value to an elemnt
+
+  const li=document.createElement('li')
+  li.textContent='bookContainer' 
+
+   const h3=document.createElement('h3')
+  h3.textContent='bookTitle' 
+
+   const p=document.createElement('p')
+  p.textContent=`bookAuthor` 
+   const img=document.createElement('img')
+  img.textContent= `bookImage`
+
+    
+// changing the text element of each content 
+
+  const bookTitle= document.querrySelector('bookTitle')
+   
+  bookTitle.textContent='father of nation'
+   
+  const bookAuthor= document.querySelector('bookAuthor')
+  bookAuthor.textContent='the author of the book'
+
+
+  const bookImage=document.querySelector('bookImage')
+
+  bookImage.textContent='url'
+
+  // appending of element 
+bookTitle.appendChild(bookContainer)
+
+bookAuthor.appendChild(bookContainer)
+
+bookImage.appendChild(bookContainer)
+
+bookContainer.appendChild(bookList)
