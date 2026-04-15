@@ -81,10 +81,10 @@ const bookStore = {
   bookImage.textContent='url'
 
   // appending of element 
-bookTitle.appendChild(bookContainer)
+ bookContainer.appendChild(bookTitle )
 
-bookAuthor.appendChild(bookContainer)
+ bookContainer.appendChild(bookAuthor )
 
-bookImage.appendChild(bookContainer)
+ bookContainer.appendChild(bookImage)
 
-bookContainer.appendChild(bookList)
+  bookList.appendChild(bookContainer)
