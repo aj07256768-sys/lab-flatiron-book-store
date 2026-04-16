@@ -1,4 +1,4 @@
-const { createElement } = require("react")
+
 
 const bookStore = {
     name: 'Flatbooks Technical Books',
@@ -47,44 +47,49 @@ const bookStore = {
 
 // Write your code here!
  
- const bookStoreTitle=document.getElementById('#header')
+//selecting element by header element
+const bookStoreTitle = document.getElementById('header');
+console.log("Header element:", bookStoreTitle);
 
- bookStoreTitle.textContent=bookStore.name
-      
+//changing  text to book store name
+bookStoreTitle.textContent = bookStore.name;
+console.log("Updated header text:", bookStoreTitle.textContent);
 
- // creating and assinging a value to an elemnt
+const bookList = document.getElementById('book-list');
+  console.log("selected book-list element:", bookList);
 
-  const li=document.createElement('li')
-  li.textContent='bookContainer' 
 
-   const h3=document.createElement('h3')
-  h3.textContent='bookTitle' 
+//looping through the books and creating elements for each book
+bookStore.books.forEach(book => {
+    console
 
-   const p=document.createElement('p')
-  p.textContent=`bookAuthor` 
-   const img=document.createElement('img')
-  img.textContent= `bookImage`
+    const bookContainer = document.createElement('li');
+    const bookTitle = document.createElement('h3');
+    const bookAuthor = document.createElement('p');
+    const bookImage = document.createElement('img');
+    console.log("created li, h3, p, img elements:");
 
+//setting the text content and image source for each book
+    bookTitle.textContent = book.title;
+    console.log("Set booktitle text to:", book.title);
+
+    bookAuthor.textContent = book.author;
+    console.log("Set bookAuthor to:", book.author);
+
+    bookImage.src = book.imageUrl;
+    console.log("Set bookImage src to:", book.imageUrl);
     
-// changing the text element of each content 
+//appending book elements to booklist
+    bookContainer.appendChild(bookTitle);
+    bookContainer.appendChild(bookAuthor);
+    bookContainer.appendChild(bookImage);
+    console.log("Appended title, author, and image to to bookContainer");
 
-  const bookTitle= document.querrySelector('bookTitle')
    
-  bookTitle.textContent='father of nation'
-   
-  const bookAuthor= document.querySelector('bookAuthor')
-  bookAuthor.textContent='the author of the book'
 
+    //appending bookContainer to bookList
+    bookList.appendChild(bookContainer);
+    console.log("Appended bookContainer to booklist");
+});
 
-  const bookImage=document.querySelector('bookImage')
-
-  bookImage.textContent='url'
-
-  // appending of element 
- bookContainer.appendChild(bookTitle )
-
- bookContainer.appendChild(bookAuthor )
-
- bookContainer.appendChild(bookImage)
-
-  bookList.appendChild(bookContainer)
+console.log("Finished rendering book list", bookStore.books.length);
